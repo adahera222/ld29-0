@@ -2,9 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BouncerScript : MonoBehaviour {
-
-    public float extraBounciness = 1.0f;
+public class ShifterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +14,11 @@ public class BouncerScript : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D coll) {
+    void OnTriggerEnter2D(Collider2D coll) {
         switch (coll.gameObject.tag) {
         case "Ball":
-            Rigidbody2D body = coll.gameObject.GetComponent<Rigidbody2D>();
-            body.AddForce(body.velocity * extraBounciness);
+            BallScript script = coll.gameObject.GetComponent<BallScript>();
+            script.arrow.rotation = transform.rotation;
             audio.Play();
             break;
         }
