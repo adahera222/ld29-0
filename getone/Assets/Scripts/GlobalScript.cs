@@ -22,4 +22,10 @@ public class GlobalScript : MonoBehaviour {
         print("GameOver");
         Application.LoadLevel("main");
     }
+
+    public void ReachedGoal()
+    {
+        print("ReachedGoal");
+        Application.LoadLevel("main");
+    }
 }

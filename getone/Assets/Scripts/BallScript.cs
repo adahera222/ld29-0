@@ -20,6 +20,15 @@ public class BallScript : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter2D(Collider2D coll) {
+        switch (coll.gameObject.tag) {
+        case "Goal":
+            // Reached the goal.
+            GlobalScript.Instance.ReachedGoal();
+            break;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D coll) {
         switch (coll.gameObject.tag) {
         case "SafeZone":
