@@ -6,26 +6,30 @@ public class CarrierScript : MonoBehaviour {
 
     // Rail attached to this carrier.
     public Transform rail = null;
-    // Total duration of transportation. small -> fast.
-    public float movingDuration = 1.0f;
+    // Speed of transportation. 
+    public float movingSpeed = 1.0f;
 
     private bool _moving = false;
     private float _t0;          // start time.
+    private Vector3 _pos0;
+    private Vector3 _pos1;
     private Vector3 _base;      // base position.
 
 	void Start () {
         // Set the base position.
-        Vector3 v = new Vector3(-1f, 0f, 0f);
-        v = rail.localToWorldMatrix.MultiplyVector(v);
-        _base = transform.position - v;
+        _pos0 = rail.localToWorldMatrix.MultiplyVector(-Vector3.right);
+        _pos1 = rail.localToWorldMatrix.MultiplyVector(Vector3.right);
+        _base = transform.position - _pos0;
 	}
 	
 	void Update () {
         if (_moving) {
             // Move along (-1,0,0) to (+1,0,0) of the attached object.
-            float dt = (Time.time - _t0) / movingDuration;
-            if (0 <= dt && dt < 1) {
-                Vector3 v = new Vector3(-1f+dt*2f, 0f, 0f);
+            float d = (Time.time - _t0) * movingSpeed;
+            float w = (_pos1-_pos0).magnitude;
+            float x = -1f+d/w*2f;
+            if (-1f <= x && x < +1f) {
+                Vector3 v = new Vector3(x, 0f, 0f);
                 v = rail.localToWorldMatrix.MultiplyVector(v);
                 transform.position = _base + v;
             }
