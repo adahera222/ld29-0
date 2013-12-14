@@ -7,6 +7,8 @@ public class GlobalScript : MonoBehaviour {
     // Global instance (throughout a game).
     public static GlobalScript Instance = null;
 
+    public AudioClip die = null;
+
 	void Awake () {
         if (Instance == null) {
             print("Initialize");
@@ -17,15 +19,17 @@ public class GlobalScript : MonoBehaviour {
         }
 	}
 
-    public void GameOver()
+    public void PlayerDied()
     {
-        print("GameOver");
+        print("PlayerDied");
+        audio.clip = die;
+        audio.Play();
         Application.LoadLevel("main");
     }
 
-    public void ReachedGoal()
+    public void PlayerReachedGoal()
     {
-        print("ReachedGoal");
+        print("PlayerReachedGoal");
         Application.LoadLevel("main");
     }
 }

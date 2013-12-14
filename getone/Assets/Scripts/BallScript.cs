@@ -15,7 +15,7 @@ public class BallScript : MonoBehaviour {
 
         case "Enemy":
             // Hit an enemy.
-            GlobalScript.Instance.GameOver();
+            GlobalScript.Instance.PlayerDied();
             break;
         }
     }
@@ -24,7 +24,7 @@ public class BallScript : MonoBehaviour {
         switch (coll.gameObject.tag) {
         case "Goal":
             // Reached the goal.
-            GlobalScript.Instance.ReachedGoal();
+            GlobalScript.Instance.PlayerReachedGoal();
             break;
         }
     }
@@ -33,7 +33,7 @@ public class BallScript : MonoBehaviour {
         switch (coll.gameObject.tag) {
         case "SafeZone":
             // Go outside the safe zone.
-            GlobalScript.Instance.GameOver();
+            GlobalScript.Instance.PlayerDied();
             break;
         }
     }
