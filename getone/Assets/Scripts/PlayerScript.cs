@@ -6,7 +6,9 @@ public class PlayerScript : MonoBehaviour {
 
     public Transform arrow = null;
     public Transform ball = null;
-    public float acceleration = 400f;
+    public float acceleration = 40f;
+
+    private bool _pressed = false;
 
 	void Start () {
 	}
@@ -17,18 +19,21 @@ public class PlayerScript : MonoBehaviour {
     }
 
 	void FixedUpdate () {
-        bool button = (Input.GetButtonDown("Horizontal") ||
-                       Input.GetButtonDown("Vertical") ||
-                       Input.GetButtonDown("Fire1") ||
-                       Input.GetButtonDown("Jump"));
+        bool button = (Input.GetButton("Horizontal") ||
+                       Input.GetButton("Vertical") ||
+                       Input.GetButton("Fire1") ||
+                       Input.GetButton("Jump"));
         if (button) {
             // Jump/Accelerate.
             GameObject obj = ball.gameObject;
             BallScript script = obj.GetComponent<BallScript>();
-            if (script.canJump) {
-                obj.rigidbody2D.AddForce(acceleration * arrow.right);
+            obj.rigidbody2D.AddForce(acceleration * arrow.right);
+            if (!_pressed) {
+                _pressed = true;
                 audio.Play();
             }
+        } else {
+            _pressed = false;
         }
 	}
 
