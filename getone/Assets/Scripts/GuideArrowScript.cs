@@ -15,7 +15,7 @@ public class GuideArrowScript : MonoBehaviour {
         // Direct the goal.
         Vector2 pos0 = new Vector3(transform.position.x, transform.position.y, 0);
         Vector2 pos1 = new Vector3(goal.position.x, goal.position.y, 0);
-        float angle = Vector2.Angle(pos1-pos0, Vector2.right);
-        transform.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
+        float angle = Vector2.Angle(Vector2.right, pos1-pos0);
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
 }
