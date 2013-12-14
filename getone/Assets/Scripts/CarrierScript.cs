@@ -23,10 +23,9 @@ public class CarrierScript : MonoBehaviour {
 	void Update () {
         if (_moving) {
             // Move along (-1,0,0) to (+1,0,0) of the attached object.
-            float dt = Time.time - _t0;
-            if (0 <= dt && dt < movingDuration) {
-                float x = dt/movingDuration;
-                Vector3 v = new Vector3(-1f+x*2f, 0f, 0f);
+            float dt = (Time.time - _t0) / movingDuration;
+            if (0 <= dt && dt < 1) {
+                Vector3 v = new Vector3(-1f+dt*2f, 0f, 0f);
                 v = rail.localToWorldMatrix.MultiplyVector(v);
                 transform.position = _base + v;
             }
