@@ -12,14 +12,21 @@ public class BallScript : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D coll) {
-        if (coll.gameObject.tag == "Floor") {
+        switch (coll.gameObject.tag) {
+        case "Floor":
             audio.Play();
+            break;
+        case "Enemy":
+            GlobalScript.Instance.GameOver();
+            break;
         }
     }
 
     void OnTriggerExit2D(Collider2D coll) {
-        if (coll.gameObject.tag == "SafeZone") {
+        switch (coll.gameObject.tag) {
+        case "SafeZone":
             GlobalScript.Instance.GameOver();
+            break;
         }
     }
 }
