@@ -4,6 +4,8 @@ using System.Collections;
 
 public class BallScript : MonoBehaviour {
 
+    private int _landed = 0;
+
 	void Start () {
 	}
 
@@ -11,11 +13,20 @@ public class BallScript : MonoBehaviour {
         switch (coll.gameObject.tag) {
         case "Floor":
             audio.Play();
+            _landed++;
             break;
 
         case "Enemy":
             // Hit an enemy.
             GlobalScript.Instance.PlayerDied();
+            break;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D coll) {
+        switch (coll.gameObject.tag) {
+        case "Floor":
+            _landed--;
             break;
         }
     }
@@ -38,8 +49,10 @@ public class BallScript : MonoBehaviour {
         }
     }
 
-    // canJump: true if it can jump (landed).
-    public bool canJump {
-        get { return true; }
+    // Accel(v)
+    public void Accel(Vector2 v) {
+        if (0 < _landed) {
+            rigidbody2D.AddForce(v);
+        }
     }
 }

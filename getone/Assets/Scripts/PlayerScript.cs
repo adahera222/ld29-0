@@ -8,15 +8,15 @@ public class PlayerScript : MonoBehaviour {
     public Transform ball = null;
     public float acceleration = 40f;
 
-    private bool _pressed = false;
+    private float _dt = 0;
 
 	void Start () {
 	}
 
-    void Update() {
+	void Update () {
         // Adjust the arrow position.
         arrow.position = ball.position;
-    }
+	}
 
 	void FixedUpdate () {
         bool button = (Input.GetButton("Horizontal") ||
@@ -25,15 +25,11 @@ public class PlayerScript : MonoBehaviour {
                        Input.GetButton("Jump"));
         if (button) {
             // Jump/Accelerate.
-            GameObject obj = ball.gameObject;
-            BallScript script = obj.GetComponent<BallScript>();
-            obj.rigidbody2D.AddForce(acceleration * arrow.right);
-            if (!_pressed) {
-                _pressed = true;
-                audio.Play();
-            }
+            BallScript script = ball.gameObject.GetComponent<BallScript>();
+            script.Accel(_dt * acceleration * arrow.right);
+            _dt += Time.deltaTime;
         } else {
-            _pressed = false;
+            _dt = 0;
         }
 	}
 

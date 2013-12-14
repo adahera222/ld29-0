@@ -1406,7 +1406,7 @@ GameObject:
   - 82: {fileID: 1081773776}
   m_Layer: 0
   m_Name: CarrierPrefab
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2440,7 +2440,7 @@ GameObject:
   - 114: {fileID: 1552915155}
   m_Layer: 0
   m_Name: MovingFloorPrefab
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
