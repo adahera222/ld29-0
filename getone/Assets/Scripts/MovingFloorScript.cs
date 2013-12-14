@@ -4,8 +4,7 @@ using System.Collections;
 
 public class MovingFloorScript : MonoBehaviour {
 
-    // trapdoor to be triggered.
-    public Transform trapdoor = null;
+    public Transform trigger = null;
     
     public float movingSpeed = 1.0f;
     public float movingRange = 1.0f;
@@ -15,11 +14,11 @@ public class MovingFloorScript : MonoBehaviour {
     private Vector3 _pos;       // initial position.
 
 	void Start () {
-        // Detect the change of the connected trapdoor.
-        if (trapdoor != null) {
-            TrapDoorScript script = trapdoor.gameObject.GetComponent<TrapDoorScript>();
+        // Detect the change of the connected trigger.
+        if (trigger != null) {
+            TriggerScript script = trigger.gameObject.GetComponent<TriggerScript>();
             if (script != null) {
-                script.activated += OnTrapDoorActivated;
+                script.activated += OnTriggerActivated;
             }
         }
         // Save the initial position.
@@ -35,7 +34,7 @@ public class MovingFloorScript : MonoBehaviour {
         }
 	}
 
-    void OnTrapDoorActivated(object sender, System.EventArgs args) {
+    void OnTriggerActivated(object sender, System.EventArgs args) {
         // Start oscillating.
         _moving = true;
         _t0 = Time.time;

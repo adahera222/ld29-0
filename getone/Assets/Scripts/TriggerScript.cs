@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TrapDoorScript : MonoBehaviour {
+public class TriggerScript : MonoBehaviour {
 
     // activated: fired when something hits the collider.
     public event System.EventHandler activated;
