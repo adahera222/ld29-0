@@ -14,9 +14,9 @@ public class GuideArrowScript : MonoBehaviour {
 	
 	void Update () {
         // Point the goal.
-        Vector2 pos0 = new Vector3(transform.position.x, transform.position.y, 0);
-        Vector2 pos1 = new Vector3(_goal.position.x, _goal.position.y, 0);
-        float angle = Vector2.Angle(Vector2.right, pos1-pos0);
+        float dx = _goal.position.x - transform.position.x;
+        float dy = _goal.position.y - transform.position.y;
+        float angle = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
 }
