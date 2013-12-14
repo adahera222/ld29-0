@@ -4,6 +4,7 @@ using System.Collections;
 
 public class BouncerScript : MonoBehaviour {
 
+    // Ratio of extra force.
     public float extraBounciness = 1.0f;
 
 	void Start () {

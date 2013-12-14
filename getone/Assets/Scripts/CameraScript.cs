@@ -4,6 +4,7 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 
+    // Object to track.
     public Transform focus = null;
 
 	void Start () {

@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour {
 
     // moveSpeed: 
     public float moveSpeed = 1.0f;
-    // moveRange: 
+    // moveRange: randomly wiggle within this area (h & v).
     public float moveRange = 1.0f;
     
     private Rect bounds;
