@@ -58,6 +58,7 @@ public class BirdScript : MonoBehaviour {
                 _victim = coll.gameObject.GetComponent<Transform>();
                 _delta = _victim.position - transform.position;
                 _t0 = Time.time;
+                audio.Play();   // caaw!
             }
             break;
         }
