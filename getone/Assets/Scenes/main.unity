@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rail: {fileID: 1534420119}
-  movingDuration: 10
+  movingSpeed: 1
 --- !u!82 &1081773776
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2381,7 +2381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1771159735}
-  movingDuration: 2
+  movingSpeed: 3
 --- !u!212 &1545569246
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2412,7 +2412,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1545569244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.76866674, y: -.268325567, z: 0}
+  m_LocalPosition: {x: 3.29686713, y: 1.3240006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2823,7 +2823,7 @@ AudioSource:
   m_GameObject: {fileID: 1654714948}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: b8996d8e56e5e344a8b5e5b3e26a0e74, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a8494980bc90c174786e599729753ca1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2887,7 +2887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 2122916089}
   ball: {fileID: 931892364}
-  acceleration: 400
+  acceleration: 20
 --- !u!1 &1771159734
 GameObject:
   m_ObjectHideFlags: 0

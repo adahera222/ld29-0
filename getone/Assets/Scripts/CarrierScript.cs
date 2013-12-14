@@ -24,7 +24,6 @@ public class CarrierScript : MonoBehaviour {
 	
 	void Update () {
         if (_moving) {
-            // Move along (-1,0,0) to (+1,0,0) of the attached object.
             float d = (Time.time - _t0) * movingSpeed;
             float w = (_pos1-_pos0).magnitude;
             float x = -1f+d/w*2f;
