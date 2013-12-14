@@ -1,16 +1,33 @@
-﻿using UnityEngine;
+﻿// -*- tab-width: 4 -*-
+using UnityEngine;
 using System.Collections;
 
 public class BallScript : MonoBehaviour {
 
-	// Use this for initialization
+    public Vector2 acceleration = new Vector2(100, 0);
+
 	void Start () {
-            Vector2 d = new Vector2(100, 400);
-            rigidbody2D.AddForce(d);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	void FixedUpdate () {
+        bool button = (Input.GetButton("Horizontal") ||
+                       Input.GetButton("Vertical") ||
+                       Input.GetButton("Fire1") ||
+                       Input.GetButton("Jump"));
+        if (button) {
+            rigidbody2D.AddForce(acceleration);
+        }
 	}
+
+    void OnCollisionEnter2D(Collision2D coll) {
+        if (coll.gameObject.tag == "Floor") {
+            audio.Play();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll) {
+        if (coll.gameObject.tag == "SafeZone") {
+            GlobalScript.Instance.GameOver();
+        }
+    }
 }

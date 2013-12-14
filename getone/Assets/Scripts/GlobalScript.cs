@@ -17,7 +17,7 @@ public class GlobalScript : MonoBehaviour {
         }
 	}
 
-    void GameOver()
+    public void GameOver()
     {
         print("GameOver");
         Application.LoadLevel("main");
