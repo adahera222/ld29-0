@@ -4,21 +4,16 @@ using System.Collections;
 
 public class ShifterScript : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
-	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     void OnTriggerEnter2D(Collider2D coll) {
         switch (coll.gameObject.tag) {
         case "Ball":
-            BallScript script = coll.gameObject.GetComponent<BallScript>();
-            script.arrow.rotation = transform.rotation;
+            // Change the ball direction.
+            Transform player = coll.gameObject.GetComponent<Transform>().parent;
+            PlayerScript script = player.gameObject.GetComponent<PlayerScript>();
+            script.Shift(transform);
             audio.Play();
             break;
         }

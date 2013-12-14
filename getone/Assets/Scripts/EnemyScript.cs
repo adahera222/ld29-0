@@ -4,13 +4,14 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
+    // moveSpeed: 
     public float moveSpeed = 1.0f;
+    // moveRange: 
     public float moveRange = 1.0f;
     
     private Rect bounds;
     private Vector2 direction;
 
-	// Use this for initialization
 	void Start () {
         initDirection();
         bounds = new Rect(transform.position.x-moveRange, 
@@ -18,7 +19,6 @@ public class EnemyScript : MonoBehaviour {
                           moveRange*2, moveRange*2);
     }
 	
-	// Update is called once per frame
 	void Update () {
         transform.Translate(direction);
         if (!bounds.Contains(transform.position)) {
@@ -33,6 +33,7 @@ public class EnemyScript : MonoBehaviour {
         initDirection();
     }
 
+    // initDirection: randomize a direction.
     void initDirection() {
         float x = Random.Range(-1f, +1f);
         float y = Random.Range(-1f, +1f);
