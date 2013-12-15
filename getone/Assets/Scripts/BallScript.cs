@@ -12,7 +12,7 @@ public class BallScript : MonoBehaviour {
     private int _landed = 0;
 
 	void Start () {
-		anim.SetFloat("Speed", 0f);
+		anim.SetFloat("Speed", 0);
 	}
 	
 	void Update () {

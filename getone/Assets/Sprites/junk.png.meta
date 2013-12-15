@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 756b1dee047d945b8862364b241c705f
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: junk_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 825
+        width: 213
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_1
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 824
+        width: 80
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_2
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 824
+        width: 80
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_3
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 768
+        width: 32
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_4
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 430
+        width: 252
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 594
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_6
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 693
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_7
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 385
+        width: 52
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_8
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 445
+        width: 252
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_9
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 465
+        width: 101
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 330
+        width: 425
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: junk_11
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 172
+        width: 430
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
