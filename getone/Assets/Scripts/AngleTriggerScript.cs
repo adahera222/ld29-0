@@ -31,10 +31,10 @@ public class AngleTriggerScript : MonoBehaviour {
         if (!multiple && _triggered) return;
         _triggered = true;
         if (target != null) {
-            target.gameObject.SendMessage("Activate", null,
+            target.gameObject.SendMessage("Activate", gameObject,
                                           SendMessageOptions.DontRequireReceiver);
         } else {
-            gameObject.SendMessage("Activate", null,
+            gameObject.SendMessage("Activate", gameObject,
                                    SendMessageOptions.DontRequireReceiver);
         }
         if (audio != null && audio.clip != null) {

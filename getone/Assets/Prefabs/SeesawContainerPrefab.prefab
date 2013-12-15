@@ -13,7 +13,7 @@ GameObject:
   - 233: {fileID: 23300000}
   - 61: {fileID: 6100000}
   m_Layer: 0
-  m_Name: Ruler
+  m_Name: Seesaw
   m_TagString: Landable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 50: {fileID: 5000002}
   m_Layer: 0
-  m_Name: SeesawPrefab
+  m_Name: SeesawContainerPrefab
   m_TagString: Motor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,7 +8,7 @@ public class TriggeredPhysicsScript : MonoBehaviour {
         rigidbody2D.isKinematic = true;
 	}
 	
-    void Activate() {
+    void Activate(GameObject obj) {
         rigidbody2D.isKinematic = false;
 	}
 }

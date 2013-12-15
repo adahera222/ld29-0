@@ -8,12 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 212: {fileID: 21200000}
   - 68: {fileID: 6800000}
-  - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400000}
+  - 212: {fileID: 21200002}
   m_Layer: 0
-  m_Name: CarrierPrefab
+  m_Name: CupElevatorPrefab
   m_TagString: Container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!68 &6800000
@@ -40,10 +40,10 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Points:
-  - {x: -.550761998, y: -.000907529437}
-  - {x: -.436339647, y: -.295089632}
-  - {x: .430391133, y: -.293125689}
-  - {x: .548235595, y: -.0154469889}
+  - {x: -.972510099, y: -.187026024}
+  - {x: -.448687077, y: .594596386}
+  - {x: .683932304, y: .589899063}
+  - {x: 1.19224882, y: -.0974669456}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -110,12 +110,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e168926216ba04ca83e70697318c1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ab96a0e5602366499f96062b37c85d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 0}
-  movingSpeed: 1
---- !u!212 &21200000
+  moveSpeed: 2
+  moveRange: {x: 0, y: 1}
+--- !u!212 &21200002
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_SortingLayerID: 3691259145
-  m_Sprite: {fileID: 21300000, guid: 756b1dee047d945b8862364b241c705f, type: 3}
+  m_Sprite: {fileID: 21300016, guid: 756b1dee047d945b8862364b241c705f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

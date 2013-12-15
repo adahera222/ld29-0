@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RandomMotionScript : MonoBehaviour {
+public class WiggleMotionScript : MonoBehaviour {
 
     // moveSpeed: 
     public float moveSpeed = 1.0f;
