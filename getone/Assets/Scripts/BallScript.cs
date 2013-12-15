@@ -12,12 +12,13 @@ public class BallScript : MonoBehaviour {
     private int _landed = 0;
 
 	void Start () {
+		anim.SetFloat("Speed", 0f);
 	}
 	
 	void Update () {
         float rot = rigidbody2D.angularVelocity * Time.deltaTime * rotationSpeed;
-		ball.Rotate(new Vector3(0, 0, rot));
-		anim.SetFloat("Speed", rot);
+		ball.Rotate(new Vector3(0, 0, -rot));
+		anim.SetFloat("Speed", Mathf.Abs(rot));
 	}
 
     void OnCollisionEnter2D(Collision2D coll) {
