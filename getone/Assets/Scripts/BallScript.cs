@@ -12,19 +12,27 @@ public class BallScript : MonoBehaviour {
     private int _landed = 0;
 
 	void Start () {
+        ball.rotation = Quaternion.identity;
 		anim.SetFloat("Speed", 0);
 	}
 	
 	void Update () {
         float rot = rigidbody2D.angularVelocity * Time.deltaTime * rotationSpeed;
-		ball.Rotate(new Vector3(0, 0, -rot));
+        float vx = transform.localScale.x;
+		ball.Rotate(new Vector3(0, 0, -vx*rot));
 		anim.SetFloat("Speed", Mathf.Abs(rot));
 	}
 
     void OnCollisionEnter2D(Collision2D coll) {
         switch (coll.gameObject.tag) {
-        case "Floor":
-            audio.Play();
+        case "Landable":
+            if (_landed == 0) {
+                audio.Play();
+            }
+            _landed++;
+            break;
+
+        case "Container":
             _landed++;
             break;
 
@@ -37,7 +45,8 @@ public class BallScript : MonoBehaviour {
 
     void OnCollisionExit2D(Collision2D coll) {
         switch (coll.gameObject.tag) {
-        case "Floor":
+        case "Landable":
+        case "Container":
             _landed--;
             break;
         }
@@ -66,5 +75,17 @@ public class BallScript : MonoBehaviour {
         if (0 < _landed) {
             rigidbody2D.AddForce(v);
         }
+    }
+
+    // SetDirection(dx)
+    public bool SetDirection(float dx) {
+        Vector3 scale = transform.localScale;
+        if ((0 < scale.x && dx < 0) ||
+            (scale.x < 0 && 0 < dx)) {
+            transform.localScale = new Vector3(dx, scale.y, scale.z);
+            ball.rotation = Quaternion.identity;
+            return true;
+        }
+        return false;
     }
 }

@@ -4,18 +4,13 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-    public Transform arrow = null;
-    public Transform ball = null;
     public float acceleration = 40f;
 
+    private Transform _ball = null;
     private float _dt = 0;
 
 	void Start () {
-	}
-
-	void Update () {
-        // Adjust the arrow position.
-        arrow.position = ball.position;
+        _ball = transform.GetChild(0);
 	}
 
 	void FixedUpdate () {
@@ -25,16 +20,11 @@ public class PlayerScript : MonoBehaviour {
                        Input.GetButton("Jump"));
         if (button) {
             // Jump/Accelerate.
-            BallScript script = ball.gameObject.GetComponent<BallScript>();
-            script.Accel(_dt * acceleration * arrow.right);
+            BallScript script = _ball.gameObject.GetComponent<BallScript>();
+            script.Accel(_dt * acceleration * transform.right * _ball.transform.localScale.x);
             _dt += Time.deltaTime;
         } else {
             _dt = 0;
         }
 	}
-
-    public void Shift(Transform shifter) {
-        // Shifter activated.
-        arrow.rotation = shifter.rotation;
-    }
 }
