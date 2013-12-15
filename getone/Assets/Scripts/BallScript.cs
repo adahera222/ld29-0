@@ -4,9 +4,20 @@ using System.Collections;
 
 public class BallScript : MonoBehaviour {
 
+	public Transform ball = null;
+	public Animator anim = null;
+
+	public float rotationSpeed = 1.0f;
+
     private int _landed = 0;
 
 	void Start () {
+	}
+	
+	void Update () {
+        float rot = rigidbody2D.angularVelocity * Time.deltaTime * rotationSpeed;
+		ball.Rotate(new Vector3(0, 0, rot));
+		anim.SetFloat("Speed", rot);
 	}
 
     void OnCollisionEnter2D(Collision2D coll) {
