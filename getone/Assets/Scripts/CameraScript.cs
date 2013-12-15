@@ -8,6 +8,11 @@ public class CameraScript : MonoBehaviour {
     public Transform focus = null;
 
 	void Start () {
+        // Find a Ball object automatically.
+        GameObject obj = GameObject.FindWithTag("Ball");
+        if (obj != null) {
+            focus = obj.transform;
+        }
 	}
 	
 	void Update () {

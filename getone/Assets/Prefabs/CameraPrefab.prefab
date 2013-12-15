@@ -48,7 +48,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 212: {fileID: 21200002}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ParallaxBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 16, y: 16, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!20 &2000000
@@ -289,8 +289,8 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_SortingLayerID: 488963755
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b8ee05b7625954e66a20ac7cbb05afab, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: .501960814}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
