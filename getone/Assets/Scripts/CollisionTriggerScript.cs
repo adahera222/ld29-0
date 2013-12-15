@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TriggerScript : MonoBehaviour {
+public class CollisionTriggerScript : MonoBehaviour {
 
     public Transform target = null;
     public bool multiple = false;
