@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyScript : MonoBehaviour {
+public class RandomMotionScript : MonoBehaviour {
 
     // moveSpeed: 
     public float moveSpeed = 1.0f;
