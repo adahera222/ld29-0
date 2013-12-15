@@ -22,14 +22,16 @@ public class GlobalScript : MonoBehaviour {
     public void PlayerDied()
     {
         print("PlayerDied");
+        // Restart the current level.
         audio.clip = die;
         audio.Play();
-        Application.LoadLevel("main");
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     public void PlayerReachedGoal()
     {
         print("PlayerReachedGoal");
-        Application.LoadLevel("main");
+        // Restart the current level....
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

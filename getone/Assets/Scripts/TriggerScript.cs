@@ -16,9 +16,11 @@ public class TriggerScript : MonoBehaviour {
         if (!multiple && _triggered) return;
         _triggered = true;
         if (target != null) {
-            target.gameObject.SendMessage("Activate", obj);
+            target.gameObject.SendMessage("Activate", obj,
+                                          SendMessageOptions.DontRequireReceiver);
         } else {
-            gameObject.SendMessage("Activate", obj);
+            gameObject.SendMessage("Activate", obj,
+                                   SendMessageOptions.DontRequireReceiver);
         }
         if (audio != null && audio.clip != null) {
             audio.Play();
