@@ -4,8 +4,8 @@ using System.Collections;
 
 public class CarrierScript : MonoBehaviour {
 
-    // Rail attached to this carrier.
-    public Transform rail = null;
+    // Path attached to this carrier.
+    public Transform path = null;
     // Speed of transportation. 
     public float movingSpeed = 1.0f;
 
@@ -17,8 +17,8 @@ public class CarrierScript : MonoBehaviour {
 
 	void Start () {
         // Set the base position.
-        _pos0 = rail.localToWorldMatrix.MultiplyVector(-Vector3.right);
-        _pos1 = rail.localToWorldMatrix.MultiplyVector(Vector3.right);
+        _pos0 = path.localToWorldMatrix.MultiplyVector(-Vector3.right);
+        _pos1 = path.localToWorldMatrix.MultiplyVector(Vector3.right);
         _base = transform.position - _pos0;
 	}
 	
@@ -29,21 +29,17 @@ public class CarrierScript : MonoBehaviour {
             float x = -1f+d/w*2f;
             if (-1f <= x && x < +1f) {
                 Vector3 v = new Vector3(x, 0f, 0f);
-                v = rail.localToWorldMatrix.MultiplyVector(v);
+                v = path.localToWorldMatrix.MultiplyVector(v);
                 transform.position = _base + v;
             }
         }
 	}
 
-    void OnCollisionEnter2D(Collision2D coll) {
-        switch (coll.gameObject.tag) {
-        case "Ball":
-            // Activate the motion.
-            if (!_moving) {
-                _moving = true;
-                _t0 = Time.time;
-            }
-            break;
+    void Activate(GameObject obj) {
+        // Activate the motion.
+        if (!_moving) {
+            _moving = true;
+            _t0 = Time.time;
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ElevatorScript : MonoBehaviour {
 
-    public Transform trigger = null;
+    // Path attached to this carrier.
     public Transform path = null;
     // Speed of transportation. 
     public float movingSpeed = 1.0f;
@@ -14,13 +14,6 @@ public class ElevatorScript : MonoBehaviour {
     private Vector3 _base;       // initial position.
 
 	void Start () {
-        // Detect the change of the connected trigger.
-        if (trigger != null) {
-            TriggerScript script = trigger.gameObject.GetComponent<TriggerScript>();
-            if (script != null) {
-                script.activated += OnTriggerActivated;
-            }
-        }
         // Save the initial position.
         _base = transform.position;
 	}
@@ -36,9 +29,11 @@ public class ElevatorScript : MonoBehaviour {
         }
 	}
 
-    void OnTriggerActivated(object sender, System.EventArgs args) {
-        // Start oscillating.
-        _moving = true;
-        _t0 = Time.time;
-	}
+    void Activate(GameObject obj) {
+        // Activate the motion.
+        if (!_moving) {
+            _moving = true;
+            _t0 = Time.time;
+        }
+    }
 }

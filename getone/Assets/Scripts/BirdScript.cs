@@ -6,7 +6,7 @@ public class BirdScript : MonoBehaviour {
 
     // Path attached to this carrier.
     public Transform path = null;
-    // 
+    // Speed of transportation. 
     public float movingSpeed = 1.0f;
 
     private Transform _victim = null;
@@ -50,17 +50,12 @@ public class BirdScript : MonoBehaviour {
         }
 	}
 
-    void OnTriggerEnter2D(Collider2D coll) {
-        switch (coll.gameObject.tag) {
-        case "Ball":
-            // Activate the motion.
-            if (_victim == null) {
-                _victim = coll.gameObject.GetComponent<Transform>();
-                _delta = _victim.position - transform.position;
-                _t0 = Time.time;
-                audio.Play();   // caaw!
-            }
-            break;
+    void Activate(GameObject obj) {
+        // Activate the motion.
+        if (_victim == null) {
+            _victim = obj.GetComponent<Transform>();
+            _delta = _victim.position - transform.position;
+            _t0 = Time.time;
         }
     }
 }

@@ -10,14 +10,9 @@ public class BouncerScript : MonoBehaviour {
 	void Start () {
 	}
 
-    void OnCollisionEnter2D(Collision2D coll) {
-        switch (coll.gameObject.tag) {
-        case "Ball":
-            // Add extra force to the ball.
-            Rigidbody2D body = coll.gameObject.GetComponent<Rigidbody2D>();
-            body.AddForce(body.velocity * extraBounciness);
-            audio.Play();
-            break;
-        }
+    void Activate(GameObject obj) {
+        // Add extra force to the ball.
+        Rigidbody2D body = obj.GetComponent<Rigidbody2D>();
+        body.AddForce(body.velocity * extraBounciness);
     }
 }

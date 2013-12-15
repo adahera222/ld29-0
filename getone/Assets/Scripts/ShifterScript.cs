@@ -7,15 +7,10 @@ public class ShifterScript : MonoBehaviour {
 	void Start () {
 	}
 	
-    void OnTriggerEnter2D(Collider2D coll) {
-        switch (coll.gameObject.tag) {
-        case "Ball":
-            // Change the ball direction.
-            Transform player = coll.gameObject.GetComponent<Transform>().parent;
-            PlayerScript script = player.gameObject.GetComponent<PlayerScript>();
-            script.Shift(transform);
-            audio.Play();
-            break;
-        }
+    void Activate(GameObject obj) {
+        // Change the ball direction.
+        Transform player = obj.GetComponent<Transform>().parent;
+        PlayerScript script = player.gameObject.GetComponent<PlayerScript>();
+        script.Shift(transform);
     }
 }

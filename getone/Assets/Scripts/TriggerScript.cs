@@ -4,25 +4,39 @@ using System.Collections;
 
 public class TriggerScript : MonoBehaviour {
 
-    // activated: fired when something hits the collider.
-    public event System.EventHandler activated;
+    public Transform target = null;
+    public bool multiple = false;
 
-    private bool _on = false;
+    private bool _triggered = false;
 
 	void Start () {
 	}
+
+    void TriggerObject(GameObject obj) {
+        if (!multiple && _triggered) return;
+        _triggered = true;
+        if (target != null) {
+            target.gameObject.SendMessage("Activate", obj);
+        } else {
+            gameObject.SendMessage("Activate", obj);
+        }
+        if (audio != null && audio.clip != null) {
+            audio.Play();
+        }
+    }
 	
     void OnCollisionEnter2D(Collision2D coll) {
         switch (coll.gameObject.tag) {
         case "Ball":
-            if (!_on) {
-                // fire an event only once.
-                _on = true;
-                if (activated != null) {
-                    activated(this, new System.EventArgs());
-                }
-                audio.Play();
-            }
+            TriggerObject(coll.gameObject);
+            break;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D coll) {
+        switch (coll.gameObject.tag) {
+        case "Ball":
+            TriggerObject(coll.gameObject);
             break;
         }
     }
