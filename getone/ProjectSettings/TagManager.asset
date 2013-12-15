@@ -47,6 +47,22 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Background
+    userID: 3
+    uniqueID: 488963755
+    locked: 0
+  - name: Object
+    userID: 4
+    uniqueID: 3798274539
+    locked: 0
+  - name: Player
+    userID: 2
+    uniqueID: 1199431847
+    locked: 0
+  - name: Container
+    userID: 5
+    uniqueID: 3691259145
+    locked: 0
   - name: Overlay
     userID: 1
     uniqueID: 3167577047

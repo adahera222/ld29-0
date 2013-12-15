@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 68: {fileID: 6800000}
   m_Layer: 0
-  m_Name: MovingFloorPrefab
+  m_Name: ElevatorPrefab
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
+  rail: {fileID: 0}
   movingSpeed: 1
-  movingRange: 4
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -102,9 +102,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3691259145
   m_Sprite: {fileID: 21300016, guid: 756b1dee047d945b8862364b241c705f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

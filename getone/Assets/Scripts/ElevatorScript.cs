@@ -2,16 +2,16 @@
 using UnityEngine;
 using System.Collections;
 
-public class MovingFloorScript : MonoBehaviour {
+public class ElevatorScript : MonoBehaviour {
 
     public Transform trigger = null;
-    
+    public Transform path = null;
+    // Speed of transportation. 
     public float movingSpeed = 1.0f;
-    public float movingRange = 1.0f;
-
+    
     private bool _moving = false;
     private float _t0;          // start time.
-    private Vector3 _pos;       // initial position.
+    private Vector3 _base;       // initial position.
 
 	void Start () {
         // Detect the change of the connected trigger.
@@ -22,15 +22,17 @@ public class MovingFloorScript : MonoBehaviour {
             }
         }
         // Save the initial position.
-        _pos = transform.position;
+        _base = transform.position;
 	}
 	
 	void Update () {
         if (_moving) {
             // Oscillating: y = sin(t)
             float dt = (Time.time - _t0);
-            float y = movingRange * Mathf.Sin(movingSpeed * dt);
-            transform.position = _pos + Vector3.up * y;
+            float y = Mathf.Sin(movingSpeed * dt);
+            Vector3 v = new Vector3(0f, y*y, 0f);
+            v = path.localToWorldMatrix.MultiplyVector(v);
+            transform.position = _base + v;
         }
 	}
 
