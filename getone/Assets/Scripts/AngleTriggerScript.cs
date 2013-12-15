@@ -19,7 +19,6 @@ public class AngleTriggerScript : MonoBehaviour {
     void Update() {
         float angle = transform.rotation.eulerAngles.z;
         bool active = (angleLower <= angle && angle <= angleUpper);
-        print("angle="+angle+", active="+active);
         if (active && !_active) {
             _active = true;
             TriggerObject();
