@@ -11,6 +11,7 @@ public class GlobalScript : MonoBehaviour {
     public bool advanceLevel = false;
 
     public AudioClip die = null;
+    public AudioClip goal = null;
 
 	void Awake () {
         if (Instance == null) {
@@ -39,8 +40,8 @@ public class GlobalScript : MonoBehaviour {
     {
         print("PlayerReachedGoal");
         // Restart the current level.
-        //audio.clip = success;
-        //audio.Play();
+        audio.clip = goal;
+        audio.Play();
         if (advanceLevel) {
             switch (Application.loadedLevelName) {
             case "level0":

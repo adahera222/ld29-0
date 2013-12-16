@@ -14,5 +14,6 @@ public class BouncerScript : MonoBehaviour {
         // Add extra force to the ball.
         Rigidbody2D body = obj.GetComponent<Rigidbody2D>();
         body.AddForce(body.velocity * extraBounciness);
+        GetComponent<Animator>().SetTrigger("Doit");
     }
 }

@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
+  - 60: {fileID: 6000000}
   m_Layer: 0
-  m_Name: Book1Prefab
+  m_Name: CheesePrefab
   m_TagString: Landable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,12 +24,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.79517794, y: -3.74065733, z: 0}
+  m_LocalPosition: {x: -9.93482113, y: 2.89125013, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!60 &6000000
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -37,8 +37,36 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .600000024, y: 3.5}
-  m_Center: {x: 0, y: 0}
+  m_Poly:
+    m_Paths:
+    - - {x: 1.09000003, y: -.919999957}
+      - {x: 1.03999996, y: -.829999983}
+      - {x: .98999995, y: -.74000001}
+      - {x: .889999986, y: -.560000002}
+      - {x: .849999964, y: -.519999981}
+      - {x: .75999999, y: -.429999977}
+      - {x: .689999998, y: -.329999983}
+      - {x: .669999957, y: -.25}
+      - {x: .649999976, y: -.140000001}
+      - {x: .149999991, y: .769999981}
+      - {x: .0799999982, y: .889999986}
+      - {x: .049999997, y: .889999986}
+      - {x: .0299999993, y: .879999995}
+      - {x: -.529999971, y: -.0799999982}
+      - {x: -.629999995, y: -.25}
+      - {x: -.909999967, y: -.74000001}
+      - {x: -.909999967, y: -.819999993}
+      - {x: -.909999967, y: -.909999967}
+      - {x: -.939999998, y: -1.00999999}
+      - {x: -1, y: -1.07999992}
+      - {x: -1.05999994, y: -1.12}
+      - {x: -1.13, y: -1.13999999}
+      - {x: -1.15999997, y: -1.15999997}
+      - {x: -1.22000003, y: -1.29999995}
+      - {x: 1.27999997, y: -1.29999995}
+      - {x: 1.24000001, y: -1.18999994}
+      - {x: 1.18999994, y: -1.10000002}
+      - {x: 1.13999999, y: -1.00999999}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -60,7 +88,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortingLayerID: 3798274539
-  m_Sprite: {fileID: 21300000, guid: 6aa730e50eb1b2f4091559d3bb2835e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7a8f1237a13f4433b6dc10ea65b846c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

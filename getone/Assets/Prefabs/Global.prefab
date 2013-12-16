@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   advanceLevel: 1
   die: {fileID: 8300000, guid: 4a6a13d8e6bc0564188e1b8496c23727, type: 3}
+  goal: {fileID: 8300000, guid: 135412229a3fbb44cac68a43732905ab, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

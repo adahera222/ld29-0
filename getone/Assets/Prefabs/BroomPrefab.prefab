@@ -9,8 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
-  - 61: {fileID: 6100002}
+  - 60: {fileID: 6000000}
   m_Layer: 0
   m_Name: BroomPrefab
   m_TagString: Landable
@@ -29,8 +28,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!60 &6000000
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -38,19 +37,16 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .400000006, y: 11.2299995}
-  m_Center: {x: .100000001, y: 0}
---- !u!61 &6100002
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1.5, y: 3.5}
-  m_Center: {x: 0, y: -3.79999995}
+  m_Poly:
+    m_Paths:
+    - - {x: .761361122, y: -2.38332653}
+      - {x: .319531292, y: -2.03999996}
+      - {x: .319531292, y: 5.53252459}
+      - {x: -.0689287484, y: 5.5372777}
+      - {x: -.0554687083, y: -2.00484371}
+      - {x: -.579800367, y: -2.45109725}
+      - {x: -1.08671868, y: -5.52046871}
+      - {x: 1.10468757, y: -5.52046871}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

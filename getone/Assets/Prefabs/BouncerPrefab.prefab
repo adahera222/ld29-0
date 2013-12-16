@@ -13,7 +13,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400002}
   - 58: {fileID: 5800000}
-  - 95: {fileID: 9500000}
+  - 95: {fileID: 9500002}
   m_Layer: 0
   m_Name: BouncerPrefab
   m_TagString: Motor
@@ -102,6 +102,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
 --- !u!95 &9500000
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d2b353da75e2464e99229af5b9f66ac, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 0
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
+--- !u!95 &9500002
 Animator:
   serializedVersion: 2
   m_ObjectHideFlags: 1
