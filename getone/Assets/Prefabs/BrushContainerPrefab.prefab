@@ -25,12 +25,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100002}
-  - 61: {fileID: 6100000}
-  - 50: {fileID: 5000002}
   - 233: {fileID: 23300000}
-  - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
+  - 60: {fileID: 6000000}
+  - 50: {fileID: 5000002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: BrushPrefab
   m_TagString: Trigger
@@ -45,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.27615023, y: -1.51622355, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -82,17 +81,17 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mass: .200000003
+  m_Mass: .100000001
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: -.200000003
+  m_GravityScale: -.100000001
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!60 &6000000
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -100,19 +99,16 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .699999988, y: .5}
-  m_Center: {x: 1.10000002, y: 0}
---- !u!61 &6100002
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 3.13000011, y: .100000001}
-  m_Center: {x: 0, y: -.150000006}
+  m_Poly:
+    m_Paths:
+    - - {x: .76343751, y: .239687562}
+      - {x: .74000001, y: -.076718688}
+      - {x: -1.52737904, y: -.0722742081}
+      - {x: -1.53284216, y: -.233868957}
+      - {x: -1.55687499, y: -.240781188}
+      - {x: .14234376, y: -.240781188}
+      - {x: 1.54648829, y: -.231168151}
+      - {x: 1.51494837, y: .245683908}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -185,7 +181,7 @@ MonoBehaviour:
   target: {fileID: 0}
   multiple: 0
   angleLower: 350
-  angleUpper: 355
+  angleUpper: 359
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -226,7 +222,7 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -5
+    m_LowerAngle: -2
     m_UpperAngle: 10
 --- !u!1001 &100100000
 Prefab:

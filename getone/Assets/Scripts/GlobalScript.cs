@@ -27,6 +27,12 @@ public class GlobalScript : MonoBehaviour {
         print("Start: "+Application.loadedLevelName);
     }
 
+    public void StartGame()
+    {
+        print("StartGame");
+        Application.LoadLevel("level0");
+    }
+
     public void PlayerDied()
     {
         print("PlayerDied");
@@ -39,7 +45,12 @@ public class GlobalScript : MonoBehaviour {
     public void PlayerReachedGoal()
     {
         print("PlayerReachedGoal");
-        // Restart the current level.
+        if (Application.loadedLevelName == "title") {
+            Application.LoadLevel(Application.loadedLevelName);
+            return;
+        }
+
+        // Go to the next level.
         audio.clip = goal;
         audio.Play();
         if (advanceLevel) {

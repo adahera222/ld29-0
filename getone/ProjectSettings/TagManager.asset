@@ -66,6 +66,10 @@ TagManager:
     userID: 5
     uniqueID: 3691259145
     locked: 0
+  - name: Title
+    userID: 6
+    uniqueID: 3000953715
+    locked: 0
   - name: Overlay
     userID: 1
     uniqueID: 3167577047

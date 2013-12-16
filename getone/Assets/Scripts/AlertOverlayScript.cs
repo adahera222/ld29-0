@@ -12,6 +12,8 @@ public class AlertOverlayScript : MonoBehaviour {
 
     // Blinking duration.
     public float blinkingDuration = 0.2f;
+    // Maximum blink count.
+    public int maxBlinkCount = 20;
 
     private bool _blinking = true;
     private float _t0;
@@ -34,7 +36,7 @@ public class AlertOverlayScript : MonoBehaviour {
     void OnGUI() {
         if (text != null && _blinking) {
             int count = (int)((Time.time-_t0) / blinkingDuration);
-            if ((count % 2) == 0) {
+            if ((count % 2) == 0 && count < maxBlinkCount) {
                 Rect r = getCenterRect(0.5f, 0.5f, 0.3f, 0.1f);
                 GUI.Label(r, text, textStyle);
             }

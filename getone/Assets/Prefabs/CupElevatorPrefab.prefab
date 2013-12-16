@@ -10,8 +10,9 @@ GameObject:
   - 4: {fileID: 400000}
   - 68: {fileID: 6800000}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11400000}
   - 212: {fileID: 21200002}
+  - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: CupElevatorPrefab
   m_TagString: Container
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.33867359, y: 6.97673321, z: 0}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,8 +42,8 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_Points:
   - {x: -.972510099, y: -.187026024}
-  - {x: -.448687077, y: .594596386}
-  - {x: .683932304, y: .589899063}
+  - {x: -.611177027, y: .475436687}
+  - {x: .835590124, y: .481572628}
   - {x: 1.19224882, y: -.0974669456}
 --- !u!82 &8200000
 AudioSource:
@@ -113,8 +114,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab96a0e5602366499f96062b37c85d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  moveRange: {x: 0, y: 1}
+  moveSpeed: .200000003
+  moveRange: {x: 0, y: 10}
+  oneTime: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7cd358f4a3a654e8006641a45ef6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  multiple: 0
 --- !u!212 &21200002
 SpriteRenderer:
   m_ObjectHideFlags: 1

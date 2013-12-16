@@ -8,12 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 20: {fileID: 2000000}
   - 92: {fileID: 9200000}
   - 124: {fileID: 12400000}
   - 81: {fileID: 8100000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400006}
+  - 20: {fileID: 2000000}
+  - 114: {fileID: 11400000}
   - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: CameraPrefab
@@ -32,7 +32,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GuideArrowPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,8 +99,8 @@ Camera:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: .757352948, g: .757352948, b: .757352948, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -422,7 +422,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_SortingLayerID: 488963755
   m_Sprite: {fileID: 21300000, guid: b8ee05b7625954e66a20ac7cbb05afab, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: .501960814}
+  m_Color: {r: .50821799, g: .691176474, b: .638181567, a: .882352948}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

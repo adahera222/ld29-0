@@ -41,9 +41,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 58: {fileID: 5800000}
+  - 82: {fileID: 8200000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400002}
-  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball

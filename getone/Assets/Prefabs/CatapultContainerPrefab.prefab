@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 50: {fileID: 5000000}
   - 233: {fileID: 23300000}
   - 82: {fileID: 8200000}
   - 61: {fileID: 6100000}
+  - 50: {fileID: 5000000}
   m_Layer: 0
   m_Name: Catapult
   m_TagString: Motor
