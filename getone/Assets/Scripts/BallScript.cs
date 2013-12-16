@@ -24,6 +24,7 @@ public class BallScript : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D(Collision2D coll) {
+        //print ("enter_collision:"+coll.gameObject.tag);
         switch (coll.gameObject.tag) {
         case "Landable":
             if (_landed == 0) {
@@ -44,6 +45,7 @@ public class BallScript : MonoBehaviour {
     }
 
     void OnCollisionExit2D(Collision2D coll) {
+        //print ("exit_collision:"+coll.gameObject.tag);
         switch (coll.gameObject.tag) {
         case "Landable":
         case "Container":
@@ -53,6 +55,7 @@ public class BallScript : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D coll) {
+        //print ("enter_trigger:"+coll.gameObject.tag);
         switch (coll.gameObject.tag) {
         case "Goal":
             // Reached the goal.
@@ -62,6 +65,7 @@ public class BallScript : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D coll) {
+        //print ("exit_trigger:"+coll.gameObject.tag);
         switch (coll.gameObject.tag) {
         case "SafeZone":
             // Go outside the safe zone.

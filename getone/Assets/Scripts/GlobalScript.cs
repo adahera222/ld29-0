@@ -27,6 +27,12 @@ public class GlobalScript : MonoBehaviour {
         print("Start: "+Application.loadedLevelName);
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            PlayerDied();
+        }
+    }
+
     public void StartGame()
     {
         print("StartGame");
@@ -72,6 +78,9 @@ public class GlobalScript : MonoBehaviour {
             Application.LoadLevel("level4");
             break;
         case "level4":
+            Application.LoadLevel("level5");
+            break;
+        case "level5":
             Application.LoadLevel("ending");
             break;
         default:
