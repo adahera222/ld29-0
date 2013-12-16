@@ -8,11 +8,7 @@ public class TitleScript : MonoBehaviour {
 	}
 	
     void Update() {
-        bool button = (Input.GetButton("Horizontal") ||
-                       Input.GetButton("Vertical") ||
-                       Input.GetButton("Fire1") ||
-                       Input.GetButton("Jump"));
-        if (button) {
+        if (GlobalScript.Instance.GetButton()) {
             // Start a game.
             GlobalScript.Instance.StartGame();
         }

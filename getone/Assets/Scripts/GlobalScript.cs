@@ -13,6 +13,8 @@ public class GlobalScript : MonoBehaviour {
     public AudioClip die = null;
     public AudioClip goal = null;
 
+    private float _init;
+
 	void Awake () {
         if (Instance == null) {
             print("Initialize");
@@ -25,6 +27,7 @@ public class GlobalScript : MonoBehaviour {
 
     void Start() {
         print("Start: "+Application.loadedLevelName);
+        _init = Time.time;
     }
 
     void Update() {
@@ -33,9 +36,21 @@ public class GlobalScript : MonoBehaviour {
         }
     }
 
+    public bool GetButton()
+    {
+        if (Time.time < _init+1) return false;
+        bool button = (Input.GetButton("Horizontal") ||
+                       Input.GetButton("Vertical") ||
+                       Input.GetButton("Fire1") ||
+                       Input.GetButton("Jump"));
+        return button;
+    }
+
     public void StartGame()
     {
         print("StartGame");
+        _init = Time.time;
+
         Application.LoadLevel("level0");
     }
 
@@ -45,6 +60,7 @@ public class GlobalScript : MonoBehaviour {
         // Restart the current level.
         audio.clip = die;
         audio.Play();
+        _init = Time.time;
 
         if (Application.loadedLevelName == "ending") {
             Application.LoadLevel("title");
@@ -59,6 +75,7 @@ public class GlobalScript : MonoBehaviour {
         // Go to the next level.
         audio.clip = goal;
         audio.Play();
+        _init = Time.time;
 
         if (!advanceLevel) {
             Application.LoadLevel(Application.loadedLevelName);

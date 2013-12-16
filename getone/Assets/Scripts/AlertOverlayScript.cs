@@ -24,11 +24,7 @@ public class AlertOverlayScript : MonoBehaviour {
 
     void Update() {
         // Stop blinking if any key is pressed.
-        bool button = (Input.GetButton("Horizontal") ||
-                       Input.GetButton("Vertical") ||
-                       Input.GetButton("Fire1") ||
-                       Input.GetButton("Jump"));
-        if (button) {
+        if (GlobalScript.Instance.GetButton()) {
             _blinking = false;
         }
     }

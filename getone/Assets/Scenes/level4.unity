@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab96a0e5602366499f96062b37c85d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: .200000003
+  moveSpeed: .300000012
   moveRange: {x: 10, y: 1}
   oneTime: 1
 --- !u!114 &906226034
@@ -2323,6 +2323,10 @@ Prefab:
     - target: {fileID: 11400000, guid: b25dc4a2d41ed134f84fed04e6653082, type: 2}
       propertyPath: moveRange.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b25dc4a2d41ed134f84fed04e6653082, type: 2}
+      propertyPath: moveSpeed
+      value: .300000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b25dc4a2d41ed134f84fed04e6653082, type: 2}

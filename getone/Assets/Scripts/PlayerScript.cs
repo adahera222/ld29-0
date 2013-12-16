@@ -14,11 +14,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-        bool button = (Input.GetButton("Horizontal") ||
-                       Input.GetButton("Vertical") ||
-                       Input.GetButton("Fire1") ||
-                       Input.GetButton("Jump"));
-        if (button) {
+        if (GlobalScript.Instance.GetButton()) {
             // Jump/Accelerate.
             BallScript script = _ball.gameObject.GetComponent<BallScript>();
             script.Accel(_dt * acceleration * transform.right * _ball.transform.localScale.x);
