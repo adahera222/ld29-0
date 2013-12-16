@@ -11,5 +11,5 @@ URLBASE=ludumdare.tabesugi.net:public/file/ludumdare.tabesugi.net/$(TARGET)
 all: 
 
 update: build
-	cd build && mv build.html index.html
+	cd build && cp build.html index.html
 	$(RSYNC) build/ $(URLBASE)/

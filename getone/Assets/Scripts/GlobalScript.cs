@@ -38,6 +38,7 @@ public class GlobalScript : MonoBehaviour {
 
     public bool GetButton()
     {
+        // Prevent keydown for the first one second after a scene starts.
         if (Time.time < _init+1) return false;
         bool button = (Input.GetButton("Horizontal") ||
                        Input.GetButton("Vertical") ||
@@ -72,7 +73,6 @@ public class GlobalScript : MonoBehaviour {
     public void PlayerReachedGoal()
     {
         print("PlayerReachedGoal");
-        // Go to the next level.
         audio.clip = goal;
         audio.Play();
         _init = Time.time;
@@ -81,6 +81,7 @@ public class GlobalScript : MonoBehaviour {
             Application.LoadLevel(Application.loadedLevelName);
         }
 
+        // Go to the next level.
         switch (Application.loadedLevelName) {
         case "level0":
             Application.LoadLevel("level1");
@@ -98,6 +99,9 @@ public class GlobalScript : MonoBehaviour {
             Application.LoadLevel("level5");
             break;
         case "level5":
+            Application.LoadLevel("level6");
+            break;
+        case "level6":
             Application.LoadLevel("ending");
             break;
         default:
