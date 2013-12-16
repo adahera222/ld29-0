@@ -591,6 +591,7 @@ MonoBehaviour:
     m_StretchHeight: 0
   blinkingDuration: .200000003
   maxBlinkCount: 20
+  textPosition: {x: .5, y: .5}
 --- !u!1 &232967523
 GameObject:
   m_ObjectHideFlags: 0

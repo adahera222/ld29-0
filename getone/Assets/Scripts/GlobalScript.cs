@@ -40,8 +40,7 @@ public class GlobalScript : MonoBehaviour {
     {
         // Prevent keydown for the first one second after a scene starts.
         if (Time.time < _init+1) return false;
-        bool button = (Input.GetButton("Horizontal") ||
-                       Input.GetButton("Vertical") ||
+        bool button = (0 < Input.GetAxis("Horizontal") ||
                        Input.GetButton("Fire1") ||
                        Input.GetButton("Jump"));
         return button;
@@ -102,6 +101,12 @@ public class GlobalScript : MonoBehaviour {
             Application.LoadLevel("level6");
             break;
         case "level6":
+            Application.LoadLevel("level7");
+            break;
+        case "level7":
+            Application.LoadLevel("level8");
+            break;
+        case "level8":
             Application.LoadLevel("ending");
             break;
         default:
