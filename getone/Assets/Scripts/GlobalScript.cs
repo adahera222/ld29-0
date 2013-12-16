@@ -39,37 +39,44 @@ public class GlobalScript : MonoBehaviour {
         // Restart the current level.
         audio.clip = die;
         audio.Play();
-        Application.LoadLevel(Application.loadedLevelName);
+
+        if (Application.loadedLevelName == "ending") {
+            Application.LoadLevel("title");
+        } else {
+            Application.LoadLevel(Application.loadedLevelName);
+        }
     }
 
     public void PlayerReachedGoal()
     {
         print("PlayerReachedGoal");
-        if (Application.loadedLevelName == "title") {
-            Application.LoadLevel(Application.loadedLevelName);
-            return;
-        }
-
         // Go to the next level.
         audio.clip = goal;
         audio.Play();
-        if (advanceLevel) {
-            switch (Application.loadedLevelName) {
-            case "level0":
-                Application.LoadLevel("level1");
-                break;
-            case "level1":
-                Application.LoadLevel("level2");
-                break;
-            case "level2":
-                Application.LoadLevel("level3");
-                break;
-            default:
-                Application.LoadLevel("title");
-                break;
-            }
-        } else {
+
+        if (!advanceLevel) {
             Application.LoadLevel(Application.loadedLevelName);
+        }
+
+        switch (Application.loadedLevelName) {
+        case "level0":
+            Application.LoadLevel("level1");
+            break;
+        case "level1":
+            Application.LoadLevel("level2");
+            break;
+        case "level2":
+            Application.LoadLevel("level3");
+            break;
+        case "level3":
+            Application.LoadLevel("level4");
+            break;
+        case "level4":
+            Application.LoadLevel("ending");
+            break;
+        default:
+            Application.LoadLevel("title");
+            break;
         }
     }
 }

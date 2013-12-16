@@ -5,10 +5,11 @@ CP=cp -f
 RSYNC=rsync -av
 
 # Project settings
-TARGET=foo
+TARGET=rube
 URLBASE=ludumdare.tabesugi.net:public/file/ludumdare.tabesugi.net/$(TARGET)
 
 all: 
 
-update: $(TARGET)
-	$(RSYNC) $(TARGET)/ $(URLBASE)/
+update: build
+	cd build && mv build.html index.html
+	$(RSYNC) build/ $(URLBASE)/
